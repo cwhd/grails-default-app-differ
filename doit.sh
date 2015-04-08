@@ -8,12 +8,12 @@ git init
 previous="n/a"
 for i in "${grails_versions[@]}"
 do 	
-    echo 'create-app from $previous to $i'
+    echo "create-app from $previous to $i"
 	echo -e "n" | gvm install grails $i
 	gvm use grails $i 
 	grails create-app gupdatediff
     git add --all
-    git commit -m 'create-app from $previous to $i'
+    git commit -m "create-app from $previous to $i"
     cd gupdatediff
     rm -rf *
     cd ..
